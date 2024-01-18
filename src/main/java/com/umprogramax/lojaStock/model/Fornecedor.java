@@ -1,4 +1,4 @@
-package com.umprogramax.lojaStock.Model;
+package com.umprogramax.lojaStock.model;
 
 import jakarta.persistence.*;
 import lombok.*;

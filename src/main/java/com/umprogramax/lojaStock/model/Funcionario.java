@@ -1,26 +1,24 @@
-package com.umprogramax.lojaStock.Model;
+package com.umprogramax.lojaStock.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-
-@Table(name = "cliente")
-@Entity(name = "cliente")
+@Table(name = "funcionario")
+@Entity(name = "funcionario")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Cliente {
+public class Funcionario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String nome;
     private Integer cpf;
-    private LocalDate dataInscricao;
-    private String genero;
+    private String registro;
+    private String tipo;
     private Endereco endereco;
 
 }

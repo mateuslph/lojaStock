@@ -1,6 +1,6 @@
 package com.umprogramax.lojaStock.repository;
 
-import com.umprogramax.lojaStock.Model.Fornecedor;
+import com.umprogramax.lojaStock.model.Fornecedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
