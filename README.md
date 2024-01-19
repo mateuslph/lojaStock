@@ -1,6 +1,9 @@
-# Loja Web
+## Demonstra uma Loja Web, que recebe o nome de "Loja Stock":
 
-### Tecnologias utilizadas:
+<p>Esta deve exibir os produtos e serviços de forma clara e atraente, para que os clientes possam encontrar facilmente o que procuram, inclui páginas de produtos detalhadas com imagens, descrições e preços.
+E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que procuram rapidamente, filtros que permitam que os clientes refinem seus resultados de pesquisa para encontrar produtos específicos.</p>
+
+<h3>Tecnologias utilizadas:</h3>
 <ul>
   <li><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Java 17 LTS</a></li>
   <li><a href="https://www.thymeleaf.org/">Thymeleaf 3.1.2</a></li>
