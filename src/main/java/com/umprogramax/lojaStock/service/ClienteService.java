@@ -35,4 +35,8 @@ public class ClienteService {
         repository.deleteById(id);
     }
 
+    public Cliente charge(UUID id) {
+        return (Cliente) repository.findById(id).get();
+    }
+
 }
