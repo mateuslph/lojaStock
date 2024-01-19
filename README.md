@@ -1,12 +1,27 @@
-# Loja Web
+## Demonstra uma Loja Web, que recebe o nome de "Loja Stock":
 
-### Tecnologias utilizadas:
+<p>Esta deve exibir os produtos e serviços de forma clara e atraente, para que os clientes possam encontrar facilmente o que procuram, inclui páginas de produtos detalhadas com imagens, descrições e preços.
+E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que procuram rapidamente, filtros que permitam que os clientes refinem seus resultados de pesquisa para encontrar produtos específicos.</p>
 
-* [Java 17 LTS](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-* [Thymeleaf 3.1.2](https://www.thymeleaf.org/)
-* [Spring Boot 3.2.1](https://spring.io/)
-* [Bootstrap 5.3](https://getbootstrap.com/)
-* [PostgreSQL 16.1](https://www.postgresql.org/)
+<h3>Tecnologias utilizadas:</h3>
+<ul>
+  <li><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Java 17 LTS</a></li>
+  <li><a href="https://www.thymeleaf.org/">Thymeleaf 3.1.2</a></li>
+  <li><a href="https://spring.io/">Spring Boot 3.2.1</a></li>
+  <li><a href="https://getbootstrap.com/">Bootstrap 5.3</a></li>
+  <li><a href="https://www.postgresql.org/">PostgreSQL 16.1</a></li>
+</ul>
+
+<h3>Dependências do Maven (disponível em <a href="https://start.spring.io/">Spring Initializr</a>):</h3>
+<ul>
+  <li>Thymeleaf;</li>
+  <li>Starter Web;</li>
+  <li>Dev Tolls;</li>
+  <li>Lombok;</li>
+  <li>Spring Data JPA;</li>
+  <li>Flywaydb;</li>
+  <li>Drive PostgreSQL;</li>
+</ul>
 
 <h3>Diagrama das Calsses do Projeto, a seguir:</h3>
   <div>
