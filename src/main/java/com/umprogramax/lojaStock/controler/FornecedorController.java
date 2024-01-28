@@ -19,16 +19,16 @@ public class FornecedorController {
     @PostMapping(value = "/salvar-fornecedor")
     public String save(@ModelAttribute("fornecedor")Fornecedor fornecedor) {
         service.create(fornecedor);
-        return "redirect:/salvar-fornecedor/index";
+        return "redirect:/listar-fornecedores/index";
     }
 
-    @GetMapping(value="/listar-fornecedor")
+    @GetMapping(value="/listar-fornecedores")
     public String index(Model model) {
         model.addAttribute("fornecedores", service.list());
         return "/listar-fornecedores/index";
     }
 
-    @PutMapping(value="/atualizar-fornecedores/{id}")
+    @PutMapping(value="/atualizar-fornecedor/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("fornecedor") Fornecedor fornecedor, Model model) {
         Fornecedor obj = service.charge(id);
         obj.setId(String.valueOf(id));
@@ -37,7 +37,7 @@ public class FornecedorController {
         obj.setDataInscricao(fornecedor.getDataInscricao());
         obj.setEndereco(fornecedor.getEndereco());
         service.update(obj);
-        return "redirect:/atualizar-fornecedor/index";
+        return "redirect:/listar-fornecedores/index";
     }
 
     public String delete(@PathVariable UUID id) {
