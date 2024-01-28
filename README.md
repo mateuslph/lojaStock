@@ -2,7 +2,7 @@
 
 <p>Esta deve exibir os produtos e serviços de forma clara e atraente, para que os clientes possam encontrar facilmente o que procuram, inclui páginas de produtos detalhadas com imagens, descrições e preços.
 E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que procuram rapidamente, filtros que permitam que os clientes refinem seus resultados de pesquisa para encontrar produtos específicos.</p>
-<p>Os <b>Requisitos de Sistema</b> podem ser acessados neste <a href="https://github.com/mateuslph/lojaStock/blob/master/docs/Requirements%20Specification%20-%20Loja%20Stock.pdf">link</a>.</p>
+<p>O <b>Levantamento dos Requisitos de Sistema</b> podem ser acessados neste <a href="https://github.com/mateuslph/lojaStock/blob/master/docs/Requirements%20Specification%20-%20Loja%20Stock.pdf">link</a>.</p>
 <h3>Tecnologias utilizadas:</h3>
 <ul>
   <li><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Java 17 LTS</a></li>
