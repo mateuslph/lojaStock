@@ -12,7 +12,7 @@ E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que pr
   <li><a href="https://www.postgresql.org/">PostgreSQL 16.1</a></li>
 </ul>
 
-<h3>Dependências do Maven, disponível em <a href="https://start.spring.io/">Spring Initializr</a>:</h3>
+<h3>As dependências utilizadas no projeto são utilizando o Maven, e estão disponíveis em <a href="https://start.spring.io/">Spring Initializr</a>:</h3>
 <ul>
   <li>Thymeleaf;</li>
   <li>Starter Web;</li>
