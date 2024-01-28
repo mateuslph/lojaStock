@@ -1,4 +1,4 @@
-## Demonstra uma Loja Web, que recebe o nome de "Loja Stock":
+## Demonstra uma Loja Online, que recebe o nome de "Loja Stock":
 
 <p>Esta deve exibir os produtos e serviços de forma clara e atraente, para que os clientes possam encontrar facilmente o que procuram, inclui páginas de produtos detalhadas com imagens, descrições e preços.
 E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que procuram rapidamente, filtros que permitam que os clientes refinem seus resultados de pesquisa para encontrar produtos específicos.</p>
