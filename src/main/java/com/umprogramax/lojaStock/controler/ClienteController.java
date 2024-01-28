@@ -15,7 +15,7 @@ public class ClienteController {
     private ClienteService service;
 
     @PostMapping(value = "/salvar-cliente")
-    public String save(@ModelAttribute("emprestimo") Cliente cliente) {
+    public String save(@ModelAttribute("cliente") Cliente cliente) {
         service.create(cliente);
         return "redirect:/listar-clientes/index";
     }
