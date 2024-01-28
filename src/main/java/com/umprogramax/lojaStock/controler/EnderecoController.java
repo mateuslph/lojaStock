@@ -18,7 +18,7 @@ public class EnderecoController {
     @PostMapping(value = "/salvar-endereco")
     public String save(@ModelAttribute("endereco") Endereco endereco) {
         service.create(endereco);
-        return "redirect:/salvar-endereco/index";
+        return "redirect:/listar-enderecos/index";
     }
 
     @GetMapping(value="/listar-enderecos")
@@ -27,7 +27,7 @@ public class EnderecoController {
         return "/listar-enderecos/index";
     }
 
-    @PutMapping(value="/atualizar-enderecos/{id}")
+    @PutMapping(value="/atualizar-endereco/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("endereco") Endereco endereco, Model model) {
         Endereco obj = service.charge(id);
         obj.setId(String.valueOf(id));
@@ -38,7 +38,7 @@ public class EnderecoController {
         obj.setComplemento(endereco.getComplemento());
         obj.setCep(endereco.getCep());
         service.update(obj);
-        return "redirect:/atualizar-enderecos/index";
+        return "redirect:/listar-enderecos/index";
     }
 
     public String delete(@PathVariable UUID id) {
