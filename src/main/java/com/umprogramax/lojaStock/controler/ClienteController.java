@@ -17,7 +17,7 @@ public class ClienteController {
     @PostMapping(value = "/salvar-cliente")
     public String save(@ModelAttribute("emprestimo") Cliente cliente) {
         service.create(cliente);
-        return "redirect:/salvar-cliente/index";
+        return "redirect:/listar-clientes/index";
     }
 
     @GetMapping(value="/listar-clientes")
@@ -26,7 +26,7 @@ public class ClienteController {
         return "/listar-clientes/index";
     }
 
-    @PutMapping(value="/atualizar-clientes/{id}")
+    @PutMapping(value="/atualizar-cliente/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {
         Cliente obj = service.charge(id);
         obj.setId(String.valueOf(id));
@@ -36,7 +36,7 @@ public class ClienteController {
         obj.setGenero(cliente.getGenero());
         obj.setEndereco(cliente.getEndereco());
         service.update(obj);
-        return "redirect:/atualizar-clientes/index";
+        return "redirect:/listar-clientes/index";
     }
 
     public String delete(@PathVariable UUID id) {
