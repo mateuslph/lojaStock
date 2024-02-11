@@ -25,7 +25,7 @@ E também, ter um sistema de busca eficaz ajuda os clientes a encontrar o que pr
 
 <h3>Diagrama das Calsses do Projeto:</h3>
   <div>
-    <img src="https://github.com/mateuslph/lojaStock/blob/master/imgs/Diagrama_de_Classe_lojaStock.jpg"></img>
+    <img src="https://github.com/mateuslph/lojaStock/blob/master/imgs/diagrama-de-classe-lojaStock.jpg"></img>
   </div>
 
   <h4>Em Breve Atualizações...</h4>
