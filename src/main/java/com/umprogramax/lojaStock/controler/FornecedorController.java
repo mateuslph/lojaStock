@@ -1,14 +1,11 @@
 package com.umprogramax.lojaStock.controler;
 
-import com.umprogramax.lojaStock.model.Endereco;
 import com.umprogramax.lojaStock.model.Fornecedor;
-import com.umprogramax.lojaStock.service.EnderecoService;
 import com.umprogramax.lojaStock.service.FornecedorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Controller

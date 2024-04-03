@@ -1,8 +1,6 @@
 package com.umprogramax.lojaStock.controler;
 
-import com.umprogramax.lojaStock.model.Cliente;
 import com.umprogramax.lojaStock.model.Endereco;
-import com.umprogramax.lojaStock.service.ClienteService;
 import com.umprogramax.lojaStock.service.EnderecoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

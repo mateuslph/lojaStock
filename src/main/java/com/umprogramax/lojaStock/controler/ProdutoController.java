@@ -1,8 +1,6 @@
 package com.umprogramax.lojaStock.controler;
 
-import com.umprogramax.lojaStock.model.Funcionario;
 import com.umprogramax.lojaStock.model.Produto;
-import com.umprogramax.lojaStock.service.FuncionarioService;
 import com.umprogramax.lojaStock.service.ProdutoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

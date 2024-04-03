@@ -1,9 +1,6 @@
 package com.umprogramax.lojaStock.service;
 
-import com.umprogramax.lojaStock.model.Endereco;
-import com.umprogramax.lojaStock.model.Fornecedor;
 import com.umprogramax.lojaStock.model.Funcionario;
-import com.umprogramax.lojaStock.repository.FornecedorRepository;
 import com.umprogramax.lojaStock.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
