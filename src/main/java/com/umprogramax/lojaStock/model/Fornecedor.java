@@ -5,8 +5,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Table(name="fornecedor")
-@Entity(name="fornecedor")
+@Table(name = "fornecedor")
+@Entity(name = "fornecedor")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -50,4 +50,5 @@ public class Fornecedor {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	
 }

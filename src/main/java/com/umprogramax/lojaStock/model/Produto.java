@@ -41,4 +41,5 @@ public class Produto {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
+	
 }

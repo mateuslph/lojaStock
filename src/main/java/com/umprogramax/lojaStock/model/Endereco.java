@@ -3,8 +3,8 @@ package com.umprogramax.lojaStock.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name="endereco")
-@Entity(name="endereco")
+@Table(name = "endereco")
+@Entity(name = "endereco")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -19,6 +19,7 @@ public class Endereco {
     private String logradouro;
     private String complemento;
     private String cep;
+    
 	public String getId() {
 		return id;
 	}
@@ -61,4 +62,5 @@ public class Endereco {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+	
 }
