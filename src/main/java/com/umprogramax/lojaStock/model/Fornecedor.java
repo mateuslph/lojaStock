@@ -18,6 +18,7 @@ public class Fornecedor {
     private String nomeFantazia;
     private Integer cnpj;
     private LocalDate dataInscricao;
+    @OneToOne
     private Endereco endereco;
     
 	public String getId() {

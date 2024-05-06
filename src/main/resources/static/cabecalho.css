@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@100;400&family=Zilla+Slab:wght@300&display=swap');
+
+:root {
+    --menu-text-color: #008000;
+    --menu-footer-color: #abff7b;
+    --menu-hover-color: #2f9101;
+    --menu-row-mobile: #9dfa67;
+    --body-color: #bad699;
+    --form-color: #d3e9b9;
+    --border-form-color: #7fc557;
+    --form-font-color: #59429d;
+    --black-color: #000000;
+
+    --general-font-family: 'Zilla Slab', serif;
+}
+
+/* menu e cabecalho */
+
+/* inicio menu dropdown */
+
+.dropdown-nivel-dois {
+    width: 171px;
+	margin: 0;
+	padding: 0.5rm;;
+	position: absolute;
+	background-color: var(--menu-footer-color);
+    display: none;
+    border-bottom: solid var(--menu-text-color);
+    border-left: solid var(--menu-text-color);
+    border-right: solid var(--menu-text-color);
+    cursor: pointer;
+}
+
+nav ul li:hover > .dropdown-nivel-dois {
+    display: block;
+}
+
+nav ul li:hover > .dropdown-nivel-um {
+    border-top: solid var(--menu-text-color);
+    border-left: solid var(--menu-text-color);
+    border-right: solid var(--menu-text-color);
+    border-bottom: 5px solid var(--menu-text-color);
+    margin-bottom: 0;
+    color: var(--black-color);
+}
+
+nav ul li:hover > ul li {
+	color: var(--black-color); 
+}
+
+.dropdown-nivel-um {
+    width: 155px;
+    margin: 0;
+}
+
+li span {
+    font-size: 20px;
+}
+
+/* fim menu dropdown */

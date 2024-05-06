@@ -17,6 +17,7 @@ public class Funcionario {
     private Integer cpf;
     private String registro;
     private String tipo;
+    @OneToOne
     private Endereco endereco;
     
 	public String getId() {

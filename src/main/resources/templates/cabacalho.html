@@ -2,7 +2,30 @@
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
 <header>
-
+    <nav id="nav">
+		<button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true"
+			aria-controls="menu" aria-expanded="false">
+			Menu <span id="hamburger"></span>
+		</button>
+		<ul id="menu" role="menu">
+			<li><a class="dropdown-nivel-um">Apresentação<span>&nbsp;▼</span></a>
+				<ul class="dropdown-nivel-dois">
+					<li><a >Início</a></li>
+					<li><a>Inspiração</a></li>
+				</ul>
+			</li>
+			<li><a class="dropdown-nivel-um">Cadastros<span>&nbsp;▼</span></a>
+				<ul class="dropdown-nivel-dois">
+					<li><a >Emprestimos</a></li>
+					<li><a >Localidades</a></li>
+					<li><a >Máquinas</a></li>
+					<li><a >Solicitantes</a></li>
+				</ul>
+			</li>			
+			<li><a class="dropdown-nivel-um" >Ajuda</a></li>			
+		</ul>
+	</nav>
+	<a id="logo" href="./usuario.html" >USUÁRIO-01</a>
 </header>
 
 </html>

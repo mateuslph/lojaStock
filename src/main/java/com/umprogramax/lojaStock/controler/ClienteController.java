@@ -23,7 +23,8 @@ public class ClienteController {
     @GetMapping(value="/listar-clientes")
     public String index(Model model) {
         model.addAttribute("clientes", service.list());
-        return "/listar-clientes/index";
+        model.addAttribute("clientes", new Cliente());
+        return "/cliente/index";
     }
 
     @PutMapping(value="/atualizar-cliente/{id}")

@@ -19,6 +19,7 @@ public class Cliente {
     private Integer cpf;
     private LocalDate dataInscricao;
     private String genero;
+    @OneToOne
     private Endereco endereco;
     
 	public String getId() {
