@@ -14,38 +14,36 @@ import java.util.UUID;
 public class ClienteController {
 
     @Autowired
-    private ClienteService service;
+    private ClienteService clienteService;
 
-    @PostMapping(value = "/salvar-cliente")
-    public String save(@ModelAttribute("cliente") Cliente cliente) {
-        service.create(cliente);
-        return "redirect:/listar-clientes/index";
-    }
-
-    @GetMapping(value="/listar-clientes")
+    @GetMapping(value="/cliente")
     public String index(Model model) {
-        model.addAttribute("clientes", service.list());
-        model.addAttribute("novoCliente", new Cliente());
+        model.addAttribute("clientes", clienteService.list());
         return "/cliente/index";
     }
 
+    @PostMapping(value = "/salva-cliente")
+    public String save(@ModelAttribute("cliente") Cliente cliente) {
+        clienteService.create(cliente);
+        return "redirect:/cliente";
+    }
 
     @PutMapping(value="/atualizar-cliente/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {
-        Cliente obj = service.charge(id);
+        Cliente obj = clienteService.charge(id);
         obj.setId(String.valueOf(id));
         obj.setNome(cliente.getNome());
         obj.setCpf(cliente.getCpf());
         obj.setDataInscricao(cliente.getDataInscricao());
         obj.setGenero(cliente.getGenero());
         obj.setEndereco(cliente.getEndereco());
-        service.update(obj);
-        return "redirect:/listar-clientes/index";
+        clienteService.update(obj);
+        return "redirect:/cliente/index";
     }
 
     public String delete(@PathVariable UUID id) {
-        service.delete(id);
-        return "redirect:/listar-clientes/index";
+        clienteService.delete(id);
+        return "redirect:/cliente/index";
     }
 
 }

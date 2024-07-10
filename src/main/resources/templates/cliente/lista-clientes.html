@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="lista-cliente">
+<div th:fragment="lista-clientes">
     <main class="body-first">
         <h3 class="titulo-tabela">Listagem dos Empréstimos:</h3>
         <div id="div-table">
@@ -18,7 +18,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="cliente:${cliente}">
+                <tr th:each="cliente:${clientes}">
                     <td th:text=${cliente.id}>id</td>
                     <td th:text=${cliente.nome}>solicitante</td>
                     <td th:text=${cliente.cpf}>máquina</td>
