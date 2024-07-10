@@ -3,6 +3,7 @@ package com.umprogramax.lojaStock.controler;
 
 import com.umprogramax.lojaStock.model.Cliente;
 import com.umprogramax.lojaStock.service.ClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Controller
 public class ClienteController {
 
+    @Autowired
     private ClienteService service;
 
     @PostMapping(value = "/salvar-cliente")
@@ -23,9 +25,10 @@ public class ClienteController {
     @GetMapping(value="/listar-clientes")
     public String index(Model model) {
         model.addAttribute("clientes", service.list());
-        model.addAttribute("cliente", new Cliente());
+        model.addAttribute("novoCliente", new Cliente());
         return "/cliente/index";
     }
+
 
     @PutMapping(value="/atualizar-cliente/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {

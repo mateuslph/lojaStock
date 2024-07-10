@@ -24,17 +24,12 @@ public class ClienteService {
     }
 
     public List<Cliente> list() {
-        return (List<Cliente>) repository.findAll();
+        return repository.findAll();
     }
-
-    public Cliente update(Cliente cliente) {
-        return repository.save(cliente);
-    }
-
+    public Cliente update(Cliente cliente) { return repository.save(cliente); }
     public void delete(UUID id) {
         repository.deleteById(id);
     }
-
     public Cliente charge(UUID id) {
         return (Cliente) repository.findById(id).get();
     }
