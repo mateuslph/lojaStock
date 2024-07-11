@@ -15,23 +15,22 @@ public class ClienteService {
     ClienteRepository repository;
 
     public Cliente create(Cliente obj) {
-        obj.getNome();
-        obj.getCpf();
-        obj.getDataInscricao();
-        obj.getGenero();
-        obj.getEndereco();
         return repository.save(obj);
     }
 
     public List<Cliente> list() {
         return repository.findAll();
     }
-    public Cliente update(Cliente cliente) { return repository.save(cliente); }
+
+    public Cliente update(Cliente cliente) {
+        return repository.save(cliente);
+    }
+
     public void delete(UUID id) {
         repository.deleteById(id);
     }
-    public Cliente charge(UUID id) {
-        return (Cliente) repository.findById(id).get();
-    }
 
+    public Cliente charge(UUID id) {
+        return repository.findById(id).orElseThrow();
+    }
 }

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Cliente</title>
+</head>
+<body>
 <div th:fragment="cadastra-cliente">
     <main class="body-first">
         <div class="div-form-first">
-            <form class="form-main" th:action="@{/salva-cliente}"
-                  th:object="${cliente}" method="POST">
+            <form class="form-main" th:action="@{/salva-cliente}" th:object="${cliente}" method="POST">
                 <fieldset class="grupo">
                     <div class="campo">
                         <label for="nome-cliente">Novo Cliente</label>
-                        <input
-                            type="text" name="nome-cliente" id="nome-cliente"
-                            placeholder="Digite o nome" maxlength="80" required
-                            th:field="${cliente.nome}">
+                        <input type="text" name="nome" id="nome-cliente"
+                               placeholder="Digite o nome" maxlength="80" required
+                               th:field="*{nome}">
                     </div>
                 </fieldset>
                 <button type="submit" class="botao">Concluído</button>
@@ -20,5 +22,5 @@
         </div>
     </main>
 </div>
-
+</body>
 </html>

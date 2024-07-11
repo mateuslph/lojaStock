@@ -1,6 +1,5 @@
 package com.umprogramax.lojaStock.controler;
 
-
 import com.umprogramax.lojaStock.model.Cliente;
 import com.umprogramax.lojaStock.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,34 +15,33 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @GetMapping(value="/cliente")
-    public String index(Model model) {
+    @GetMapping("/area-do-cliente")
+    public String mostraFormulario(Model model) {
         model.addAttribute("clientes", clienteService.list());
-        return "/cliente/index";
+        return "cliente/index";
     }
 
     @PostMapping(value = "/salva-cliente")
-    public String save(@ModelAttribute("cliente") Cliente cliente) {
+    public String salvaCliente(@ModelAttribute("cliente") Cliente cliente) {
         clienteService.create(cliente);
-        return "redirect:/cliente";
+        return "area-do-cliente";
     }
 
-    @PutMapping(value="/atualizar-cliente/{id}")
-    public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {
+    @PutMapping("/atualizar-cliente/{id}")
+    public String update(@PathVariable("id") UUID id, @ModelAttribute("cliente") Cliente cliente) {
         Cliente obj = clienteService.charge(id);
-        obj.setId(String.valueOf(id));
         obj.setNome(cliente.getNome());
         obj.setCpf(cliente.getCpf());
         obj.setDataInscricao(cliente.getDataInscricao());
         obj.setGenero(cliente.getGenero());
         obj.setEndereco(cliente.getEndereco());
         clienteService.update(obj);
-        return "redirect:/cliente/index";
+        return "redirect:/cliente";
     }
 
-    public String delete(@PathVariable UUID id) {
+    @DeleteMapping("/deletar-cliente/{id}")
+    public String delete(@PathVariable("id") UUID id) {
         clienteService.delete(id);
-        return "redirect:/cliente/index";
+        return "redirect:/cliente";
     }
-
 }

@@ -15,17 +15,11 @@ public class EnderecoService {
     EnderecoRepository repository;
 
     public Endereco create(Endereco obj) {
-        obj.getPais();
-        obj.getUf();
-        obj.getMunicipio();
-        obj.getLogradouro();
-        obj.getComplemento();
-        obj.getCep();
         return repository.save(obj);
     }
 
     public List<Endereco> list() {
-        return (List<Endereco>) repository.findAll();
+        return repository.findAll();
     }
 
     public Endereco update(Endereco endereco) {
@@ -37,7 +31,6 @@ public class EnderecoService {
     }
 
     public Endereco charge(UUID id) {
-        return (Endereco) repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
-
 }
