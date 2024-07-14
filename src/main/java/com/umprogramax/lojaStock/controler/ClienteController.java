@@ -13,35 +13,37 @@ import java.util.UUID;
 public class ClienteController {
 
     @Autowired
-    private ClienteService clienteService;
+    private ClienteService service;
 
-    @GetMapping("/area-do-cliente")
-    public String mostraFormulario(Model model) {
-        model.addAttribute("clientes", clienteService.list());
-        return "cliente/index";
+    @GetMapping(value="/cliente")
+    public String index(Model model) {
+        model.addAttribute("clientes", service.list());
+        model.addAttribute("cliente", new Cliente());
+        return "/cliente/index";
     }
 
-    @PostMapping(value = "/salva-cliente")
-    public String salvaCliente(@ModelAttribute("cliente") Cliente cliente) {
-        clienteService.create(cliente);
-        return "area-do-cliente";
+    @PostMapping(value="/salva-cliente")
+    public String save(@ModelAttribute("cliente") Cliente cliente) {
+        service.create(cliente);
+        return "redirect:/cliente";
     }
 
-    @PutMapping("/atualizar-cliente/{id}")
-    public String update(@PathVariable("id") UUID id, @ModelAttribute("cliente") Cliente cliente) {
-        Cliente obj = clienteService.charge(id);
+    @PutMapping(value="/cliente/{id}")
+    public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {
+        Cliente obj = service.charge(id);
+        obj.setId(id);
         obj.setNome(cliente.getNome());
         obj.setCpf(cliente.getCpf());
         obj.setDataInscricao(cliente.getDataInscricao());
         obj.setGenero(cliente.getGenero());
         obj.setEndereco(cliente.getEndereco());
-        clienteService.update(obj);
+        service.update(obj);
         return "redirect:/cliente";
     }
 
-    @DeleteMapping("/deletar-cliente/{id}")
-    public String delete(@PathVariable("id") UUID id) {
-        clienteService.delete(id);
+    @DeleteMapping(value="/cliente/{id}")
+    public String delete(@PathVariable UUID id) {
+        service.delete(id);
         return "redirect:/cliente";
     }
 }

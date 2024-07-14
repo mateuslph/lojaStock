@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
 <div th:fragment="lista-clientes">
     <main class="body-first">
         <h3 class="titulo-tabela">Listagem dos Clientes:</h3>
@@ -20,7 +21,7 @@
                     <td th:text="${cliente.id}">id</td>
                     <td th:text="${cliente.nome}">nome</td>
                     <td th:text="${cliente.cpf}">cpf</td>
-                    <td th:text="${#temporals.format(cliente.dataInscricao, 'dd/MM/yyyy')}">data</td>
+                    <td th:text="${#temporals.format(cliente.dataInscricao, 'dd/MM/yyyy')}">dataInscricao</td>
                     <td th:text="${cliente.genero}">genero</td>
                     <td th:text="${cliente.endereco.logradouro}">endereco</td>
                 </tr>
@@ -29,4 +30,5 @@
         </div>
     </main>
 </div>
+
 </html>

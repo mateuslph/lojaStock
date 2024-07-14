@@ -2,7 +2,9 @@ package com.umprogramax.lojaStock.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -20,8 +22,10 @@ public class Cliente {
 	private UUID id;
 	private String nome;
 	private String cpf;
-	private String dataInscricao;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private LocalDate dataInscricao;
 	private String genero;
 	@OneToOne
 	private Endereco endereco;
+
 }
