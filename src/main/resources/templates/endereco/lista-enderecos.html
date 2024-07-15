@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="lista-enderecos">
+    <main class="body-first">
+        <h3 class="titulo-tabela">Listagem dos Clientes:</h3>
+        <div id="div-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">UF</th>
+                    <th scope="col">Município</th>
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Complemento</th>
+                    <th scope="col">CEP</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="endereco : ${enderecos}">
+                    <td th:text="${endereco.id}">id</td>
+                    <td th:text="${endereco.pais}">Pais</td>
+                    <td th:text="${endereco.uf}">UF</td>
+                    <td th:text="${endereco.municipio}">Município</td>
+                    <td th:text="${endereco.logradouro}">Logradouro</td>
+                    <td th:text="${endereco.numero}">Número</td>
+                    <td th:text="${endereco.complemento}">Complemento</td>
+                    <td th:text="${endereco.cep}">CEP</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+</html>
