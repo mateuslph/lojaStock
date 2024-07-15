@@ -25,7 +25,8 @@ public class Cliente {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate dataInscricao;
 	private String genero;
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
 
 }
