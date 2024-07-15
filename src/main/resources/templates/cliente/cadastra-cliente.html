@@ -24,24 +24,18 @@
                                th:field="*{dataInscricao}">
                     </div>
                     <div class="campo">
-                        <label for="genero-cliente">CPF</label>
+                        <label for="genero-cliente">Gênero</label>
                         <input type="text" name="genero-cliente" id="genero-cliente"
                                placeholder="Digite seu Gênero" maxlength="40" required
                                th:field="*{genero}">
                     </div>
-
-
-                    <!--TODO lista suspensa endereco nao carrega-->
-
                     <div class="campo">
                         <label for="endereco-cliente">Selecione o Endereço</label>
                         <select name="endereco-cliente" id="endereco-cliente" required
-                                th:field="${cliente.endereco.id}">
-                            <option selected value="0">
-                                    Selecione
-                            </option>
-                            <option th:each="endereco:${enderecos}"
-                                    th:value="${cliente.endereco.id}" th:text="${cliente.endereco.logradouro}">
+                                th:field="*{endereco.id}">
+                            <option value="0" selected>Selecione</option>
+                            <option th:each="endereco : ${enderecos}"
+                                    th:value="${endereco.id}" th:text="${endereco.logradouro}">
                             </option>
                         </select>
                     </div>

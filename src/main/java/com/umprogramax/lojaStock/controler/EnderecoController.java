@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -18,7 +19,8 @@ public class EnderecoController {
 
     @GetMapping(value="/endereco")
     public String index(Model model) {
-        model.addAttribute("enderecos", service.list());
+        List<Endereco> enderecos = service.list();
+        model.addAttribute("enderecos", enderecos);
         model.addAttribute("endereco", new Endereco());
         return "/endereco/index";
     }
