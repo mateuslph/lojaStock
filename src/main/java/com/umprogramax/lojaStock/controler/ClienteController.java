@@ -1,7 +1,6 @@
 package com.umprogramax.lojaStock.controler;
 
 import com.umprogramax.lojaStock.model.Cliente;
-import com.umprogramax.lojaStock.model.Endereco;
 import com.umprogramax.lojaStock.service.ClienteService;
 import com.umprogramax.lojaStock.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public class ClienteController {
     @Autowired
     private EnderecoService enderecoService;
 
-    @GetMapping(value="/cliente")
+    @GetMapping(value = "/cliente")
     public String index(Model model) {
         model.addAttribute("clientes", clienteService.list());
         model.addAttribute("cliente", new Cliente());
@@ -29,13 +28,13 @@ public class ClienteController {
         return "/cliente/index";
     }
 
-    @PostMapping(value="/salva-cliente")
+    @PostMapping(value = "/salva-cliente")
     public String save(@ModelAttribute("cliente") Cliente cliente) {
         clienteService.create(cliente);
         return "redirect:/cliente";
     }
 
-    @PutMapping(value="/cliente/{id}")
+    @PutMapping(value = "/cliente/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("cliente") Cliente cliente, Model model) {
         Cliente obj = clienteService.charge(id);
         obj.setId(id);
@@ -48,7 +47,7 @@ public class ClienteController {
         return "redirect:/cliente";
     }
 
-    @DeleteMapping(value="/cliente/{id}")
+    @DeleteMapping(value = "/cliente/{id}")
     public String delete(@PathVariable UUID id) {
         clienteService.delete(id);
         return "redirect:/cliente";

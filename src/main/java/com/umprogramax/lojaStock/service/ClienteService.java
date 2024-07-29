@@ -14,10 +14,7 @@ public class ClienteService {
     @Autowired
     ClienteRepository repository;
 
-    public Cliente create(Cliente obj) {
-
-        return repository.save(obj);
-    }
+    public Cliente create(Cliente obj) { return repository.save(obj); }
 
     public List<Cliente> list() {
         return repository.findAll();

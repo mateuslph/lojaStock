@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="cadastra-fornecedor">
+    <main class="body-first">
+        <div class="div-form-first">
+            <form class="form-main" th:action="@{/salva-fornecedor}" th:object="${fornecedor}" method="POST">
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome-fantasia">Novo fornecedor</label>
+                        <input type="text" name="nome-fantasia" id="nome-fantasia"
+                               placeholder="Digite o Nome Fantasia" maxlength="80" required
+                               th:field="*{nomeFantazia}">
+                    </div>
+                    <div class="campo">
+                        <label for="cnpj-fornecedor">CPF</label>
+                        <input type="text" name="cnpj-fornecedor" id="cnpj-fornecedor"
+                               placeholder="Digite o CNPJ" maxlength="14" required
+                               th:field="*{cnpj}">
+                    </div>
+                    <div class="campo">
+                        <label for="data-inscricao">Data da inscrição</label>
+                        <input type="date" name="data-inscricao" id="data-inscricao" required
+                               th:field="*{dataInscricao}">
+                    </div>
+                    <div class="campo">
+                        <label for="endereco-fornecedor">Selecione o Endereço</label>
+                        <select name="endereco-fornecedor" id="endereco-fornecedor" required
+                                th:field="*{endereco.id}">
+                            <option value="0" selected>Selecione</option>
+                            <option th:each="endereco : ${enderecos}"
+                                    th:value="${endereco.id}" th:text="${endereco.logradouro}">
+                            </option>
+                        </select>
+                    </div>
+                </fieldset>
+                <button type="submit" class="botao">Concluído</button>
+            </form>
+        </div>
+    </main>
+</div>
+</html>

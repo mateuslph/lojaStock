@@ -2,54 +2,30 @@ package com.umprogramax.lojaStock.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
-@Table(name = "fornecedor")
-@Entity(name = "fornecedor")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "fornecedor")
+@Entity(name = "fornecedor")
 @EqualsAndHashCode(of = "id")
 public class Fornecedor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue
+	@Column(columnDefinition = "UUID")
+    private UUID id;
     private String nomeFantazia;
-    private Integer cnpj;
+    private String cnpj;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate dataInscricao;
-    @OneToOne
+	@ManyToOne
+	@JoinColumn(name = "endereco_id")
     private Endereco endereco;
-    
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getNomeFantazia() {
-		return nomeFantazia;
-	}
-	public void setNomeFantazia(String nomeFantazia) {
-		this.nomeFantazia = nomeFantazia;
-	}
-	public Integer getCnpj() {
-		return cnpj;
-	}
-	public void setCnpj(Integer cnpj) {
-		this.cnpj = cnpj;
-	}
-	public LocalDate getDataInscricao() {
-		return dataInscricao;
-	}
-	public void setDataInscricao(LocalDate dataInscricao) {
-		this.dataInscricao = dataInscricao;
-	}
-	public Endereco getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
+
 }

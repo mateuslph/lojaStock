@@ -14,16 +14,10 @@ public class FornecedorService {
     @Autowired
     FornecedorRepository repository;
 
-    public Fornecedor create(Fornecedor obj) {
-        obj.getNomeFantazia();
-        obj.getCnpj();
-        obj.getDataInscricao();
-        obj.getEndereco();
-        return repository.save(obj);
-    }
+    public Fornecedor create(Fornecedor obj) { return repository.save(obj); }
 
     public List<Fornecedor> list() {
-        return (List<Fornecedor>) repository.findAll();
+        return repository.findAll();
     }
 
     public Fornecedor update(Fornecedor fornecedor) {
@@ -35,7 +29,6 @@ public class FornecedorService {
     }
 
     public Fornecedor charge(UUID id) {
-        return (Fornecedor) repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
-
 }
