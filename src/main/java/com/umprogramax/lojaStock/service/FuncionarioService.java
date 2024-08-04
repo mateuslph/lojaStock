@@ -1,6 +1,8 @@
 package com.umprogramax.lojaStock.service;
 
+import com.umprogramax.lojaStock.model.Fornecedor;
 import com.umprogramax.lojaStock.model.Funcionario;
+import com.umprogramax.lojaStock.repository.FornecedorRepository;
 import com.umprogramax.lojaStock.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,17 +16,10 @@ public class FuncionarioService {
     @Autowired
     FuncionarioRepository repository;
 
-    public Funcionario create(Funcionario obj) {
-        obj.getNome();
-        obj.getCpf();
-        obj.getRegistro();
-        obj.getTipo();
-        obj.getEndereco();
-        return repository.save(obj);
-    }
+    public Funcionario create(Funcionario obj) { return repository.save(obj); }
 
     public List<Funcionario> list() {
-        return (List<Funcionario>) repository.findAll();
+        return repository.findAll();
     }
 
     public Funcionario update(Funcionario funcionario) {
@@ -36,7 +31,6 @@ public class FuncionarioService {
     }
 
     public Funcionario charge(UUID id) {
-        return (Funcionario) repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
-
 }

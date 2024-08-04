@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="cadastra-funcionario">
+    <main class="body-first">
+        <div class="div-form-first">
+            <form class="form-main" th:action="@{/salva-funcionario}" th:object="${funcionario}" method="POST">
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label for="nome">Novo funcinario</label>
+                        <input type="text" name="nome" id="nome"
+                               placeholder="Digite do Funcionario" maxlength="80" required
+                               th:field="*{nome}">
+                    </div>
+                    <div class="campo">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf"
+                               placeholder="Digite o CPF" maxlength="11" required
+                               th:field="*{cpf}">
+                    </div>
+                    <div class="campo">
+                        <label for="registro">Registro</label>
+                        <input type="text" name="registro" id="registro" required
+                               th:field="*{registro}">
+                    </div>
+                    <div class="campo">
+                        <label for="tipo">Tipo</label>
+                        <input type="text" name="tipo" id="tipo" required
+                               th:field="*{tipo}">
+                    </div>
+                    <div class="campo">
+                        <label for="endereco-fornecedor">Selecione o Endereço</label>
+                        <select name="endereco-fornecedor" id="endereco-fornecedor" required
+                                th:field="*{endereco.id}">
+                            <option value="0" selected>Selecione</option>
+                            <option th:each="endereco : ${enderecos}"
+                                    th:value="${endereco.id}" th:text="${endereco.logradouro}">
+                            </option>
+                        </select>
+                    </div>
+                </fieldset>
+                <button type="submit" class="botao">Concluído</button>
+            </form>
+        </div>
+    </main>
+</div>
+</html>

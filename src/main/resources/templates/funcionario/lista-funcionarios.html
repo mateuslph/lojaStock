@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="lista-funcionarios">
+    <main class="body-first">
+        <h3 class="titulo-tabela">Listagem dos funcionarios:</h3>
+        <div id="div-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome Funcionario</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Endereço</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="funcionario : ${funcionarios}">
+                    <td th:text="${funcionario.id}">id</td>
+                    <td th:text="${funcionario.nome}">nome</td>
+                    <td th:text="${funcionario.cpf}">cpf</td>
+                    <td th:text="${funcionario.tipo}">tipo</td>
+                    <td th:text="${funcionario.endereco.logradouro}">endereco</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+</html>

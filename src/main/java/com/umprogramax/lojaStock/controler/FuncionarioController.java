@@ -1,7 +1,11 @@
 package com.umprogramax.lojaStock.controler;
 
+import com.umprogramax.lojaStock.model.Fornecedor;
 import com.umprogramax.lojaStock.model.Funcionario;
+import com.umprogramax.lojaStock.service.FornecedorService;
+import com.umprogramax.lojaStock.service.EnderecoService;
 import com.umprogramax.lojaStock.service.FuncionarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,36 +15,42 @@ import java.util.UUID;
 @Controller
 public class FuncionarioController {
 
-    private FuncionarioService service;
+    @Autowired
+    private FuncionarioService funcionarioService;
 
-    @PostMapping(value = "/salvar-funcionario")
-    public String save(@ModelAttribute("funcionario")Funcionario funcionario) {
-        service.create(funcionario);
-        return "redirect:/listar-funcionarios/index";
-    }
+    @Autowired
+    private EnderecoService enderecoService;
 
-    @GetMapping(value="/listar-funcionarios")
+    @GetMapping(value = "/funcionario")
     public String index(Model model) {
-        model.addAttribute("funcionarios", service.list());
-        return "/listar-funcionarios/index";
+        model.addAttribute("funcionarios", funcionarioService.list());
+        model.addAttribute("funcionario", new Funcionario());
+        model.addAttribute("enderecos", enderecoService.list());
+        return "/funcionario/index";
     }
 
-    @PutMapping(value="/atualizar-funcionario/{id}")
+    @PostMapping(value = "/salva-funcionario")
+    public String save(@ModelAttribute("funcionario") Funcionario funcionario) {
+        funcionarioService.create(funcionario);
+        return "redirect:/funcionario";
+    }
+
+    @PutMapping(value = "/funcionario/{id}")
     public String update(@PathVariable UUID id, @ModelAttribute("funcionario") Funcionario funcionario, Model model) {
-        Funcionario obj = service.charge(id);
-        obj.setId(String.valueOf(id));
+        Funcionario obj = funcionarioService.charge(id);
+        obj.setId(id);
         obj.setNome(funcionario.getNome());
         obj.setCpf(funcionario.getCpf());
         obj.setRegistro(funcionario.getRegistro());
         obj.setTipo(funcionario.getTipo());
         obj.setEndereco(funcionario.getEndereco());
-        service.update(obj);
-        return "redirect:/listar-funcionarios/index";
+        funcionarioService.update(obj);
+        return "redirect:/funcionario";
     }
 
+    @DeleteMapping(value = "/funcionario/{id}")
     public String delete(@PathVariable UUID id) {
-        service.delete(id);
-        return "redirect:/listar-funcionarios/index";
+        funcionarioService.delete(id);
+        return "redirect:/funcionario";
     }
-
 }
