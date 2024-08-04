@@ -3,6 +3,10 @@ package com.umprogramax.lojaStock.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
+@Getter
+@Setter
 @Table(name = "produto")
 @Entity(name = "produto")
 @AllArgsConstructor
@@ -12,34 +16,9 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
     private String descricao;
-    private Float preco;
+    private Double preco;
     private String observacao;
-    
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public Float getPreco() {
-		return preco;
-	}
-	public void setPreco(Float preco) {
-		this.preco = preco;
-	}
-	public String getObservacao() {
-		return observacao;
-	}
-	public void setObservacao(String observacao) {
-		this.observacao = observacao;
-	}
 	
 }

@@ -14,27 +14,16 @@ public class ProdutoService {
     @Autowired
     ProdutoRepository repository;
 
-    public Produto create(Produto obj) {
-        obj.getDescricao();
-        obj.getPreco();
-        obj.getObservacao();
-        return repository.save(obj);
-    }
+    public Produto create(Produto obj) { return repository.save(obj); }
 
-    public List<Produto> list() {
-        return (List<Produto>) repository.findAll();
-    }
+    public List<Produto> list() { return repository.findAll(); }
 
-    public Produto update(Produto produto) {
-        return repository.save(produto);
-    }
+    public Produto update(Produto produto) { return repository.save(produto); }
 
-    public void delete(UUID id) {
-        repository.deleteById(id);
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
 
     public Produto charge(UUID id) {
-        return (Produto) repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
 
 }

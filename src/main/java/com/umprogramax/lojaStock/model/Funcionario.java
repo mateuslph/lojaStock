@@ -18,7 +18,7 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
-    private Integer cpf;
+    private String cpf;
     private String registro;
     private String tipo;
 	@ManyToOne
