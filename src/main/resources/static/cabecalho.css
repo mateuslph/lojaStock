@@ -45,7 +45,7 @@ nav ul li:hover > .dropdown-nivel-um {
 }
 
 nav ul li:hover > ul li {
-	color: var(--black-color); 
+	color: var(--black-color);
 }
 
 .dropdown-nivel-um {
@@ -58,3 +58,225 @@ li span {
 }
 
 /* fim menu dropdown */
+
+#header {
+    font-family: var(--general-font-family);
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--menu-footer-color);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#menu li:hover {
+    color: var(--menu-hover-color);
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+.div-header h1 {
+    font-size: 2em;
+    font-family: var(--general-font-family);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: auto;
+    height: max-content;
+    background-color: #b4f88c;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #008000;
+    padding: 1em;
+}
+
+/*body*/
+
+body {
+    min-width: 340px;
+}
+
+.body-first {
+    background-color: var(--body-color);
+    font-family: var(--general-font-family);
+    padding: 20px;
+    justify-content: center;
+}
+
+.div-form-first {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* font-size: 1em; */
+}
+
+.form-main {
+    border: solid 3px var(--border-form-color);
+    background-color: var(--form-color);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.grupo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fieldset {
+	border: 0;
+}
+
+input, select, textarea, .botao {
+	font-size: 1.2em;
+	border-radius: 5px;
+}
+
+.grupo:before, .grupo:after {
+	display: table;
+}
+
+.grupo:after {
+	clear: both;
+}
+
+.campo {
+	margin-bottom: 1em;
+}
+
+
+fieldset.grupo
+.campo {
+	float: left;
+	margin-right: 1em;
+    margin-left: 1em;
+}
+
+.campo input[type="text"], .campo input[type="usuario"], .campo input[type="date"],
+	.campo input[type="number"], .campo select, .campo textarea {
+	padding: 0.2em;
+	border: 1px solid #59429d;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	display: block;
+    color: var(--form-font-color);
+}
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+	background: #E0E0F8;
+}
+
+.botao {
+	font-size: 1.2em;
+	background: #59429d;
+	border: 0;
+	color: #ffffff;
+	padding: 0.2em 0.6em;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	position: relative;
+	left: 45%;
+	margin-top: 20px;
+	margin-left: 15px;
+	transform: translate(-50%, -50%)
+}
+
+.botao:hover {
+	background: #CCBBFF;
+	box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+	text-shadow: none;
+}
+
+.botao, select {
+	cursor: pointer;
+}
+
+/*rodape*/
+
+footer {
+    font-family: var(--general-font-family);
+    background-color: var(--menu-footer-color);
+    width: 100%;
+    padding: 1.5em 0 1.5em 0;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: var(--menu-footer-color);
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid var(--menu-row-mobile);
+    }
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
