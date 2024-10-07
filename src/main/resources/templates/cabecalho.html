@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-
-<header th:fragment="menu" id="header">
-    <nav id="nav">
-		<button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true"
-			aria-controls="menu" aria-expanded="false">
-			Menu <span id="hamburger"></span>
-		</button>
-		<ul id="menu" role="menu">
-			<li><a class="dropdown-nivel-um">Apresentação<span>&nbsp;▼</span></a>
-				<ul class="dropdown-nivel-dois">
-					<li><a >Início</a></li>
-					<li><a>Inspiração</a></li>
-				</ul>
-			</li>
-			<li><a class="dropdown-nivel-um">Cadastros<span>&nbsp;▼</span></a>
-				<ul class="dropdown-nivel-dois">
-					<li><a >Emprestimos</a></li>
-					<li><a >Localidades</a></li>
-					<li><a >Máquinas</a></li>
-					<li><a >Solicitantes</a></li>
-				</ul>
-			</li>
-			<li><a class="dropdown-nivel-um" >Ajuda</a></li>
-		</ul>
+<header th:fragment="menu">
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="logotipo card-cabecalho">
+			<a class="navbar-brand" href="#">Brand</a>
+		</div>
+		<div class="collapse navbar-collapse card-cabecalho" id="main_nav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"> <a class="nav-link" href="#"> Início </a> </li>
+				<li class="nav-item active"><a class="nav-link" href="#"> About </a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link  dropdown-toggle active" href="#" data-toggle="dropdown"> Serviços </a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#"> Cliente </a></li>
+						<li><a class="dropdown-item" href="#"> Produto </a></li>
+						<li><a class="dropdown-item" href="#"> Fornecedor </a></li>
+						<li><a class="dropdown-item" href="#"> Funcionário </a></li>
+						<li><a class="dropdown-item" href="#"> Endereço </a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="entrar card-cabecalho">
+			<a href="#">USUÁRIO-01</a>
+		</div>
 	</nav>
-	<a id="logo" href="./usuario.html" >USUÁRIO-01</a>
 </header>
 
 </html>
