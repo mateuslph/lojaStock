@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="lista-fornecedores">
-    <main class="body-first">
-        <h3 class="titulo-tabela">Listagem dos fornecedores:</h3>
-        <div id="div-table">
-            <table class="table">
+<main th:fragment="lista-fornecedores">
+    <div class="container-main">
+        <div class="titulo">
+            <h3>Listagem dos fornecedores:</h3>
+        </div>
+        <div class="borda">
+            <table class="table tabela">
                 <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome Fantasia</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">Data Inscrição</th>
-                        <th scope="col">Endereço</th>
-                    </tr>
+                <tr>
+                    <th scope="col">Nome Fantasia</th>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col">Data Inscrição</th>
+                    <th scope="col">Endereço</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="fornecedor : ${fornecedores}">
-                        <td th:text="${fornecedor.id}">id</td>
-                        <td th:text="${fornecedor.nomeFantazia}">nome</td>
-                        <td th:text="${fornecedor.cnpj}">cpf</td>
-                        <td th:text="${#temporals.format(fornecedor.dataInscricao, 'dd/MM/yyyy')}">dataInscricao</td>
-                        <td th:text="${fornecedor.endereco.logradouro}">endereco</td>
-                    </tr>
+                <tr th:each="fornecedor : ${fornecedores}">
+                    <td th:text="${fornecedor.nomeFantazia}">nomeFantazia</td>
+                    <td th:text="${fornecedor.cnpj}">cpf</td>
+                    <td th:text="${#temporals.format(fornecedor.dataInscricao, 'dd/MM/yyyy')}">dataInscricao</td>
+                    <td th:text="${fornecedor.endereco.logradouro}">endereco</td>
+                </tr>
                 </tbody>
             </table>
         </div>
-    </main>
-</div>
+    </div>
+</main>
 
 </html>
