@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="cadastra-funcionario">
-    <main class="body-first">
-        <div class="div-form-first">
-            <form class="form-main" th:action="@{/salva-funcionario}" th:object="${funcionario}" method="POST">
-                <fieldset class="grupo">
-                    <div class="campo">
-                        <label for="nome">Novo funcinario</label>
-                        <input type="text" name="nome" id="nome"
-                               placeholder="Digite do Funcionario" maxlength="80" required
-                               th:field="*{nome}">
-                    </div>
-                    <div class="campo">
-                        <label for="cpf">CPF</label>
-                        <input type="text" name="cpf" id="cpf"
-                               placeholder="Digite o CPF" maxlength="11" required
-                               th:field="*{cpf}">
-                    </div>
-                    <div class="campo">
-                        <label for="registro">Registro</label>
-                        <input type="text" name="registro" id="registro" required
-                               th:field="*{registro}">
-                    </div>
-                    <div class="campo">
-                        <label for="tipo">Tipo</label>
-                        <input type="text" name="tipo" id="tipo" required
-                               th:field="*{tipo}">
-                    </div>
-                    <div class="campo">
-                        <label for="endereco-fornecedor">Selecione o Endereço</label>
-                        <select name="endereco-fornecedor" id="endereco-fornecedor" required
-                                th:field="*{endereco.id}">
-                            <option value="0" selected>Selecione</option>
-                            <option th:each="endereco : ${enderecos}"
-                                    th:value="${endereco.id}" th:text="${endereco.logradouro}">
-                            </option>
-                        </select>
-                    </div>
-                </fieldset>
-                <button type="submit" class="botao">Concluído</button>
-            </form>
+<main th:fragment="cadastra-funcionario">
+    <div class="container-main">
+        <div class="titulo">
+            <h3>Formulário para Cadastros:</h3>
         </div>
-    </main>
-</div>
+        <form class="form-group borda" th:action="@{/salva-funcionario}" th:object="${funcionario}" method="POST">
+            <div class="row mb-3">
+                <label for="nomefuncionario" class="col-sm-2 col-form-label">Novo funcionario</label>
+                <div class="col-sm-10 input">
+                    <input type="text" class="form-control" id="nomefuncionario" placeholder="Digite seu Nome"
+                           maxlength="80" required th:field="*{nome}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="cpfFuncionario" class="col-sm-2 col-form-label">CPF</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cpfFuncionario" placeholder="Digite seu CPF" maxlength="11"
+                           required th:field="*{cpf}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="registroFuncionario" class="col-sm-2 col-form-label">Registro</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="registroFuncionario" placeholder="Digite seu Registro" maxlength="20"
+                           required th:field="*{registro}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="tipoFuncionario" class="col-sm-2 col-form-label">Tipo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="tipoFuncionario" placeholder="Digite seu Tipo" maxlength="20"
+                           required th:field="*{tipo}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="enderecofuncionario" class="col-sm-2 col-form-label">Endereço</label>
+                <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select" id="enderecofuncionario" required
+                            th:field="*{endereco.id}">
+                        <option value="0" selected>Selecione</option>
+                        <option th:each="endereco : ${enderecos}" th:value="${endereco.id}"
+                                th:text="${endereco.logradouro}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-grupo">
+                <button type="submit" class="btn botao btn-success">Concluído</button>
+                <button type="submit" class="btn botao btn-primary">Cancelar</button>
+                <button type="submit" class="btn botao btn-warning">Atualizar</button>
+                <button type="submit" class="btn botao btn-danger">Deletar</button>
+            </div>
+        </form>
+
+    </div>
+</main>
+
 </html>

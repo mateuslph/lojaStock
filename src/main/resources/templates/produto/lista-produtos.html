@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="lista-produtos">
-    <main class="body-first">
-        <h3 class="titulo-tabela">Listagem dos Produtos:</h3>
-        <div id="div-table">
-            <table class="table">
+<main th:fragment="lista-produtos">
+    <div class="container-main">
+        <div class="titulo">
+            <h3>Listagem dos produtos:</h3>
+        </div>
+        <div class="borda">
+            <table class="table tabela">
                 <thead>
                 <tr>
-                    <th scope="col">Código</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Observação</th>
@@ -16,15 +17,14 @@
                 </thead>
                 <tbody>
                 <tr th:each="produto : ${produtos}">
-                    <td th:text="${produto.id}">id</td>
-                    <td th:text="${produto.descricao}">descrição</td>
-                    <td th:text="${produto.preco}">preço</td>
-                    <td th:text="${produto.observacao}">observações</td>
+                    <td th:text="${produto.descricao}">descricao</td>
+                    <td th:text="${produto.preco}">preco</td>
+                    <td th:text="${produto.observacao}">observacao</td>
                 </tr>
                 </tbody>
             </table>
         </div>
-    </main>
-</div>
+    </div>
+</main>
 
 </html>
