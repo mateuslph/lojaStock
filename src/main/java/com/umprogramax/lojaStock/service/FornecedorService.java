@@ -16,19 +16,12 @@ public class FornecedorService {
 
     public Fornecedor create(Fornecedor obj) { return repository.save(obj); }
 
-    public List<Fornecedor> list() {
-        return repository.findAll();
-    }
+    public List<Fornecedor> list() { return repository.findAll(); }
 
-    public Fornecedor update(Fornecedor fornecedor) {
-        return repository.save(fornecedor);
-    }
+    public Fornecedor update(Fornecedor fornecedor) { return repository.save(fornecedor); }
 
-    public void delete(UUID id) {
-        repository.deleteById(id);
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
 
-    public Fornecedor charge(UUID id) {
-        return repository.findById(id).orElseThrow();
-    }
+    public Fornecedor charge(UUID id) { return repository.findById(id).orElseThrow(); }
+
 }

@@ -50,4 +50,5 @@ public class FornecedorController {
         fornecedorService.delete(id);
         return "redirect:/fornecedor";
     }
+
 }

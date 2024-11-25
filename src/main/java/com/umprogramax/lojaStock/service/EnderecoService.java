@@ -14,23 +14,14 @@ public class EnderecoService {
     @Autowired
     EnderecoRepository repository;
 
-    public Endereco create(Endereco obj) {
-        return repository.save(obj);
-    }
+    public Endereco create(Endereco obj) { return repository.save(obj); }
 
-    public List<Endereco> list() {
-        return repository.findAll();
-    }
+    public List<Endereco> list() { return repository.findAll(); }
 
-    public Endereco update(Endereco endereco) {
-        return repository.save(endereco);
-    }
+    public Endereco update(Endereco endereco) { return repository.save(endereco); }
 
-    public void delete(UUID id) {
-        repository.deleteById(id);
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
 
-    public Endereco charge(UUID id) {
-        return repository.findById(id).orElseThrow();
-    }
+    public Endereco charge(UUID id) { return repository.findById(id).orElseThrow(); }
+
 }

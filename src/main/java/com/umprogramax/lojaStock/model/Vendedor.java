@@ -7,12 +7,12 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Table(name = "funcionario")
-@Entity(name = "funcionario")
+@Table(name = "vendedor")
+@Entity(name = "vendedor")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Funcionario {
+public class Vendedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -21,8 +21,8 @@ public class Funcionario {
     private String cpf;
     private String registro;
     private String tipo;
-	@ManyToOne
-	@JoinColumn(name = "endereco_id")
+    @ManyToOne
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
 }

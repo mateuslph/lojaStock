@@ -1,6 +1,5 @@
 package com.umprogramax.lojaStock.controler;
 
-import com.umprogramax.lojaStock.model.Cliente;
 import com.umprogramax.lojaStock.model.Endereco;
 import com.umprogramax.lojaStock.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +50,5 @@ public class EnderecoController {
         service.delete(id);
         return "redirect:/endereco";
     }
+
 }

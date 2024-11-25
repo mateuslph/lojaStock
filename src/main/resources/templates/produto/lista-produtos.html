@@ -13,6 +13,7 @@
                     <th scope="col">Descrição</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Observação</th>
+                    <th scope="col">Fornecedor</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,6 +21,7 @@
                     <td th:text="${produto.descricao}">descricao</td>
                     <td th:text="${produto.preco}">preco</td>
                     <td th:text="${produto.observacao}">observacao</td>
+                    <td th:text="${produto.fornecedor.nomeFantazia}">Fornecedor</td>
                 </tr>
                 </tbody>
             </table>

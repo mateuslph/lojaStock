@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<main th:fragment="lista-vendas">
+    <div class="container-main">
+        <div class="titulo">
+            <h3>Listagem das Vendas:</h3>
+        </div>
+        <div class="borda">
+            <table class="table tabela">
+                <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Vendedor</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Data Venda</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="venda : ${vendas}">
+                    <td th:text="${venda.produto.descricao}">produto</td>
+                    <td th:text="${venda.vendedor.nome}">vendedor</td>
+                    <td th:text="${venda.cliente.nome}">cliente</td>
+                    <td th:text="${#temporals.format(venda.dataDaVenda, 'dd/MM/yyyy HH:mm:ss')}">dataDaVenda</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+</html>

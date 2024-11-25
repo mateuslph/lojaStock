@@ -4,7 +4,6 @@ import com.umprogramax.lojaStock.model.Produto;
 import com.umprogramax.lojaStock.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -22,8 +21,6 @@ public class ProdutoService {
 
     public void delete(UUID id) { repository.deleteById(id); }
 
-    public Produto charge(UUID id) {
-        return repository.findById(id).orElseThrow();
-    }
+    public Produto charge(UUID id) { return repository.findById(id).orElseThrow(); }
 
 }

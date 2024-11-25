@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-<main th:fragment="cadastra-funcionario">
+<main th:fragment="salva-cliente">
     <div class="container-main">
         <div class="titulo">
             <h3>Formulário para Cadastros:</h3>
         </div>
-        <form class="form-group borda" th:action="@{/salva-funcionario}" th:object="${funcionario}" method="POST">
+        <form class="form-group borda" th:action="@{/salva-cliente}" th:object="${cliente}" method="POST">
             <div class="row mb-3">
-                <label for="nomefuncionario" class="col-sm-2 col-form-label">Novo funcionario</label>
+                <label for="nomeCliente" class="col-sm-2 col-form-label">Novo Cliente</label>
                 <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="nomefuncionario" placeholder="Digite seu Nome"
+                    <input type="text" class="form-control" id="nomeCliente" placeholder="Digite seu Nome"
                            maxlength="80" required th:field="*{nome}">
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="cpfFuncionario" class="col-sm-2 col-form-label">CPF</label>
+                <label for="cpfCliente" class="col-sm-2 col-form-label">CPF</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="cpfFuncionario" placeholder="Digite seu CPF" maxlength="11"
+                    <input type="text" class="form-control" id="cpfCliente" placeholder="Digite seu CPF" maxlength="11"
                            required th:field="*{cpf}">
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="registroFuncionario" class="col-sm-2 col-form-label">Registro</label>
+                <label for="dataInscricao" class="col-sm-2 col-form-label">Data da inscrição</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="registroFuncionario" placeholder="Digite seu Registro" maxlength="20"
-                           required th:field="*{registro}">
+                    <input type="date" class="form-control" id="dataInscricao" required th:field="*{dataInscricao}">
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="tipoFuncionario" class="col-sm-2 col-form-label">Tipo</label>
+                <label for="generoCliente" class="col-sm-2 col-form-label">Gênero</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="tipoFuncionario" placeholder="Digite seu Tipo" maxlength="20"
-                           required th:field="*{tipo}">
+                    <input type="text" class="form-control" id="generoCliente" placeholder="Digite seu Gênero"
+                           maxlength="40" required th:field="*{genero}">
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="enderecofuncionario" class="col-sm-2 col-form-label">Endereço</label>
+                <label for="enderecoCliente" class="col-sm-2 col-form-label">Endereço</label>
                 <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select" id="enderecofuncionario" required
+                    <select class="form-select" aria-label="Default select" id="enderecoCliente" required
                             th:field="*{endereco.id}">
                         <option value="0" selected>Selecione</option>
                         <option th:each="endereco : ${enderecos}" th:value="${endereco.id}"

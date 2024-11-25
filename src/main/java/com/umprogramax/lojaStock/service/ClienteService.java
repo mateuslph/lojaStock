@@ -16,19 +16,12 @@ public class ClienteService {
 
     public Cliente create(Cliente obj) { return repository.save(obj); }
 
-    public List<Cliente> list() {
-        return repository.findAll();
-    }
+    public List<Cliente> list() { return repository.findAll(); }
 
-    public Cliente update(Cliente cliente) {
-        return repository.save(cliente);
-    }
+    public Cliente update(Cliente cliente) { return repository.save(cliente); }
 
-    public void delete(UUID id) {
-        repository.deleteById(id);
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
 
-    public Cliente charge(UUID id) {
-        return repository.findById(id).orElseThrow();
-    }
+    public Cliente charge(UUID id) { return repository.findById(id).orElseThrow(); }
+
 }
