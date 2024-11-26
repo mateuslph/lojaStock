@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="enderecovendedor" class="col-sm-2 col-form-label">Endereço</label>
+                <label for="enderecoVendedor" class="col-sm-2 col-form-label">Endereço</label>
                 <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select" id="enderecovendedor" required
+                    <select class="form-select" aria-label="Default select" id="enderecoVendedor" required
                             th:field="*{endereco.id}">
                         <option value="0" selected>Selecione</option>
                         <option th:each="endereco : ${enderecos}" th:value="${endereco.id}"

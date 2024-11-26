@@ -16,8 +16,7 @@ import java.util.UUID;
 public class Venda {
 
     @Id
-    @GeneratedValue
-    @Column(columnDefinition = "UUID")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @ManyToOne
     @JoinColumn(name = "produto_id")
@@ -28,15 +27,8 @@ public class Venda {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+    @Setter
     @DateTimeFormat(pattern="dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dataDaVenda;
-
-    public String getDataDaVenda(String dataDaVenda) {
-        return dataDaVenda;
-    }
-
-    public void setDataDaVenda(LocalDateTime dataDaVenda) {
-        this.dataDaVenda = dataDaVenda;
-    }
 
 }

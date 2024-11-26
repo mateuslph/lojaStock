@@ -1,13 +1,18 @@
 package com.umprogramax.lojaStock.controler;
 
+import com.umprogramax.lojaStock.model.Endereco;
+import com.umprogramax.lojaStock.model.Fornecedor;
 import com.umprogramax.lojaStock.model.Produto;
+import com.umprogramax.lojaStock.model.Vendedor;
 import com.umprogramax.lojaStock.service.EnderecoService;
+import com.umprogramax.lojaStock.service.FornecedorService;
 import com.umprogramax.lojaStock.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -17,13 +22,14 @@ public class ProdutoController {
     private ProdutoService service;
 
     @Autowired
-    private EnderecoService enderecoService;
+    private FornecedorService fornecedorService;
 
     @GetMapping(value = "/produto")
     public String index(Model model) {
+        List<Produto> produtos = service.list();
         model.addAttribute("produtos", service.list());
         model.addAttribute("produto", new Produto());
-        model.addAttribute("enderecos", enderecoService.list());
+        model.addAttribute("fornecedores", fornecedorService.list());
         return "/produto/index";
     }
 

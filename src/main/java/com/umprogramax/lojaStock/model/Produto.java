@@ -23,6 +23,6 @@ public class Produto {
     @JoinColumn(name = "fornecedor_id")
     private Fornecedor fornecedor;
 
-    public Produto(Fornecedor fornecedor) { this.fornecedor = fornecedor; }
+    /*public Produto(Fornecedor fornecedor) { this.fornecedor = fornecedor; }*/
 
 }

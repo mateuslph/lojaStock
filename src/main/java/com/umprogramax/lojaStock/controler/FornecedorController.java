@@ -1,6 +1,7 @@
 package com.umprogramax.lojaStock.controler;
 
 import com.umprogramax.lojaStock.model.Fornecedor;
+import com.umprogramax.lojaStock.model.Produto;
 import com.umprogramax.lojaStock.service.FornecedorService;
 import com.umprogramax.lojaStock.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -16,14 +18,11 @@ public class FornecedorController {
     @Autowired
     private FornecedorService fornecedorService;
 
-    @Autowired
-    private EnderecoService enderecoService;
-
-    @GetMapping(value = "/fornecedor")
+    @GetMapping(value="/fornecedor")
     public String index(Model model) {
-        model.addAttribute("fornecedores", fornecedorService.list());
+        List<Fornecedor> fornecedores = fornecedorService.list();
         model.addAttribute("fornecedor", new Fornecedor());
-        model.addAttribute("enderecos", enderecoService.list());
+        model.addAttribute("fornecedores", fornecedores);
         return "/fornecedor/index";
     }
 

@@ -11,10 +11,10 @@
                 <label for="produtoVenda" class="col-sm-2 col-form-label">Escolha o produto</label>
                 <div class="col-sm-10">
                     <select class="form-select" aria-label="Default select" id="produtoVenda" required
-                            th:field="*{venda.id}">
+                            th:field="*{produto.id}">
                         <option value="0" selected>Selecione</option>
-                        <option th:each="venda : ${vendas}" th:value="${venda.id}"
-                                th:text="${venda.produto.descricao}">
+                        <option th:each="produto : ${produtos}" th:value="${produto.id}"
+                                th:text="${produto.descricao}">
                         </option>
                     </select>
                 </div>
@@ -23,10 +23,10 @@
                 <label for="vendedorVenda" class="col-sm-2 col-form-label">Escolha o vendedor</label>
                 <div class="col-sm-10">
                     <select class="form-select" aria-label="Default select" id="vendedorVenda" required
-                            th:field="*{venda.id}">
+                            th:field="*{vendedor.id}">
                         <option value="0" selected>Selecione</option>
-                        <option th:each="venda : ${vendas}" th:value="${venda.id}"
-                                th:text="${venda.vendedor.nome}">
+                        <option th:each="vendedor : ${vendedores}" th:value="${vendedor.id}"
+                                th:text="${vendedor.nome}">
                         </option>
                     </select>
                 </div>
@@ -35,13 +35,19 @@
                 <label for="clienteVenda" class="col-sm-2 col-form-label">Escolha o cliente</label>
                 <div class="col-sm-10">
                     <select class="form-select" aria-label="Default select" id="clienteVenda" required
-                            th:field="*{venda.id}">
+                            th:field="*{cliente.id}">
                         <option value="0" selected>Selecione</option>
-                        <option th:each="venda : ${vendas}" th:value="${venda.id}"
-                                th:text="${venda.cliente.nome}">
+                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}"
+                                th:text="${cliente.nome}">
                         </option>
                     </select>
                 </div>
+            </div>
+            <div class="btn-grupo">
+                <button type="submit" class="btn botao btn-success">Concluído</button>
+                <button type="submit" class="btn botao btn-primary">Cancelar</button>
+                <button type="submit" class="btn botao btn-warning">Atualizar</button>
+                <button type="submit" class="btn botao btn-danger">Deletar</button>
             </div>
         </form>
 

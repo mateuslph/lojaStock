@@ -1,7 +1,9 @@
 package com.umprogramax.lojaStock.service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,13 @@ public class VendaService {
     @Autowired
     VendaRepository repository;
 
-    public LocalDateTime dataDaVenda() { LocalDateTime agora = LocalDateTime.now(); return agora; }
+
+    public LocalDateTime criaDataDaVenda() {
+
+        LocalDateTime agora = LocalDateTime.now();
+        return agora;
+
+    }
 
     public Venda create(Venda obj) { return repository.save(obj); }
 

@@ -1,6 +1,7 @@
 package com.umprogramax.lojaStock.controler;
 
 import com.umprogramax.lojaStock.model.Cliente;
+import com.umprogramax.lojaStock.model.Vendedor;
 import com.umprogramax.lojaStock.service.ClienteService;
 import com.umprogramax.lojaStock.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -21,6 +23,7 @@ public class ClienteController {
 
     @GetMapping(value = "/cliente")
     public String index(Model model) {
+        List<Cliente> clientes = clienteService.list();
         model.addAttribute("clientes", clienteService.list());
         model.addAttribute("cliente", new Cliente());
         model.addAttribute("enderecos", enderecoService.list());

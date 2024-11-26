@@ -1,7 +1,10 @@
 package com.umprogramax.lojaStock.controler;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.umprogramax.lojaStock.model.Produto;
+import com.umprogramax.lojaStock.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.umprogramax.lojaStock.model.Venda;
-import com.umprogramax.lojaStock.service.EnderecoService;
-import com.umprogramax.lojaStock.service.VendaService;
 
 @Controller
 public class VendaController {
@@ -23,18 +24,27 @@ public class VendaController {
     private VendaService vendaService;
 
     @Autowired
-    private EnderecoService enderecoService;
+    private ProdutoService produtoService;
+
+    @Autowired
+    private VendedorService vendedorService;
+
+    @Autowired
+    private ClienteService clienteService;
 
     @GetMapping(value = "/venda")
     public String index(Model model) {
         model.addAttribute("vendas", vendaService.list());
         model.addAttribute("venda", new Venda());
-        model.addAttribute("enderecos", enderecoService.list());
+        model.addAttribute("produtos", produtoService.list());
+        model.addAttribute("vendedores", vendedorService.list());
+        model.addAttribute("clientes", clienteService.list());
         return "/venda/index";
     }
 
     @PostMapping(value = "/salva-venda")
     public String save(@ModelAttribute("venda") Venda venda) {
+        venda.setDataDaVenda(vendaService.criaDataDaVenda());
         vendaService.create(venda);
         return "redirect:/venda";
     }

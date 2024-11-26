@@ -7,10 +7,10 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Table(name = "vendedor")
-@Entity(name = "vendedor")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "vendedor")
+@Entity(name = "vendedor")
 @EqualsAndHashCode(of = "id")
 public class Vendedor {
 
