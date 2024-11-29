@@ -4,65 +4,58 @@
 <main th:fragment="salva-endereco">
     <div class="container-main">
         <div class="titulo">
-            <h3>Formulário para Cadastros:</h3>
+            <h3>Endereço</h3>
         </div>
-        <form class="form-group borda" th:action="@{/salva-endereco}" th:object="${endereco}" method="POST">
+        <form class="form-group borda" th:action="@{/endereco/salva-endereco}" th:object="${endereco}" method="POST">
             <div class="row mb-3">
-                <label for="paisEndereco" class="col-sm-2 col-form-label">Novo País</label>
+                <label for="endereco" class="col-sm-2 col-form-label">Novo Endereço</label>
                 <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="paisEndereco" placeholder="Digite o país"
-                           maxlength="80" required th:field="*{pais}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="ufEndereco" class="col-sm-2 col-form-label">UF</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="ufEndereco" placeholder="Digite a UF"
-                           maxlength="280" required th:field="*{uf}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="municipioEndereco" class="col-sm-2 col-form-label">Município</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="municipioEndereco" placeholder="Digite o município"
-                           maxlength="180" required th:field="*{municipio}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="logradouroEndereco" class="col-sm-2 col-form-label">Logradouro</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="logradouroEndereco" placeholder="Digite o logradouro"
-                           maxlength="80" required th:field="*{logradouro}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="numeroEndereco" class="col-sm-2 col-form-label">Número</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="numeroEndereco" placeholder="Digite o número"
-                           maxlength="80" required th:field="*{numero}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="complementoEndereco" class="col-sm-2 col-form-label">Complemento</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="complementoEndereco" placeholder="Digite o complemento"
-                           maxlength="280" required th:field="*{complemento}">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="cepEndereco" class="col-sm-2 col-form-label">CEP</label>
-                <div class="col-sm-10 input">
-                    <input type="text" class="form-control" id="cepEndereco" placeholder="Digite o CEP"
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite o CEP"
                            maxlength="80" required th:field="*{cep}">
                 </div>
             </div>
+
             <div class="btn-grupo">
                 <button type="submit" class="btn botao btn-success">Concluído</button>
-                <button type="submit" class="btn botao btn-primary">Cancelar</button>
-                <button type="submit" class="btn botao btn-warning">Atualizar</button>
-                <button type="submit" class="btn botao btn-danger">Deletar</button>
             </div>
+
+            <!--<label for="cep">CEP:</label>
+            <input type="text" id="cep" th:field="*{cep}" name="cep">
+            <button type="submit">Salvar Endereço</button>
+            <div th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}">
+                <span class="error">CEP inválido</span>
+            </div>-->
         </form>
+
+        <div>
+            <button onclick="abrirPopup()">Abrir Pop-up Centralizado</button>
+            <script>
+                function abrirPopup() {
+                    // Dimensões da janela
+                    var larguraJanela = 950;
+                    var alturaJanela = 550;
+
+                    // Obtendo as dimensões da tela
+                    var larguraTela = window.innerWidth;
+                    var alturaTela = window.innerHeight;
+
+                    // Calculando as coordenadas para centralizar
+                    var horizontal = (larguraTela - larguraJanela) / 2;
+                    var vertical = (alturaTela - alturaJanela) / 2;
+
+                    // Altera posicao
+                    var esquerda = horizontal - 0;
+                    var topo = vertical + 0;
+
+                    // Abrindo a janela com as coordenadas calculadas
+                    window.open("http://localhost:8080/endereco/edita-endereco", "MinhaJanela",
+                        "width=" + larguraJanela +
+                        ",height=" + alturaJanela +
+                        ",left=" + esquerda +
+                        ",top=" + topo);
+                }
+            </script>
+        </div>
 
     </div>
 </main>

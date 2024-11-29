@@ -1,9 +1,7 @@
 package com.umprogramax.lojaStock.controler;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.umprogramax.lojaStock.model.Produto;
 import com.umprogramax.lojaStock.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
