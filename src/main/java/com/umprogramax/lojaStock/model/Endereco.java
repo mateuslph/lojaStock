@@ -2,6 +2,7 @@ package com.umprogramax.lojaStock.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+/*import jakarta.validation.constraints.NotEmpty;*/
 import lombok.*;
 import java.util.UUID;
 
